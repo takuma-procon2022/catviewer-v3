@@ -6,7 +6,7 @@ import { catWalk, catRotate, catAction, setCatMaterial } from "./catMeshManager.
 export function addKotatsu(position) {
     return new Promise((resolve) => {
         new THREE.TextureLoader().load(
-            "/assets/env/group/kotatsu.png",
+            "./../../../assets/env/group/kotatsu.png",
             texture => {
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;

@@ -5,7 +5,7 @@ export function addKanban(groupId, position, kanbanText) {
     let promiseKanban = [];
     promiseKanban.push(new Promise((resolve) => {
         new THREE.TextureLoader().load(
-            "/assets/env/group/board.png",
+            "./../../../assets/env/group/board.png",
             texture => {
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;

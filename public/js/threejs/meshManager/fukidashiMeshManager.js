@@ -4,7 +4,7 @@ export function addFukidashi(position, fukidashiText) {
     let promiseFukidashi = [];
     promiseFukidashi.push(new Promise((resolve) => {
         new THREE.TextureLoader().load(
-            "/assets/env/group/fukidashi.png",
+            "./../../../assets/env/group/fukidashi.png",
             texture => {
                 texture.wrapS = THREE.RepeatWrapping;
                 texture.wrapT = THREE.RepeatWrapping;
