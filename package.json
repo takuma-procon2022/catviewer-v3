@@ -1,0 +1,14 @@
+{
+  "name": "catviewer-v3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "none",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "three": "^0.145.0"
+  }
+}
