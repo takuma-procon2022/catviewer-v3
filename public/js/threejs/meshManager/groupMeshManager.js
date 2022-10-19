@@ -1,4 +1,4 @@
-import { getRandomInt, lerp } from "/js/voicecat/useful.js"
+import { getRandomInt, lerp } from "./../../voicecat/useful.js"
 import { scene } from "../mainController.js";
 import { catWalk, catRotate, catAction, setCatMaterial } from "./catMeshManager.js";
 

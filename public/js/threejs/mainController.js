@@ -1,4 +1,4 @@
-import { getRandomInt, lerp } from "./js/voicecat/useful.js";
+import { getRandomInt, lerp } from "./../voicecat/useful.js";
 import { initBackgroud } from "./addbackGround.js";
 import { loadKittenMaterial } from "./meshLoad/catLoad.js";
 import { catUpdate } from "./meshManager/groupMeshManager.js";

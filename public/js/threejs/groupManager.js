@@ -2,7 +2,7 @@ import { scene, groupList, catKinds, catScale, fukidashiList } from "./mainContr
 import { addCat } from "./meshManager/catMeshManager.js";
 import { addKotatsu } from "./meshManager/groupMeshManager.js";
 import { addKanban, delKanban } from "./meshManager/kanbanMeshManager.js";
-import { getRandomInt, lerp } from "/js/voicecat/useful.js"
+import { getRandomInt, lerp } from "./../voicecat/useful.js"
 // import { sendKanbanText } from "/js/voicecat/kanban.js"
 import { addFukidashi } from "./meshManager/fukidashiMeshManager.js";
 
