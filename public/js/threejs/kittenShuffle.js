@@ -4,7 +4,7 @@ import { addFukidashi } from "./meshManager/fukidashiMeshManager.js"
 // import { userList } from "../voicecat/voicecat.js";
 import { addHighLight } from "./meshManager/highLightMeshManager.js"
 
-let catSound = new Audio('./../../assets/env/kitten/sound/cat.mp3');
+let catSound = new Audio('./assets/env/kitten/sound/cat.mp3');
 catSound.volume = 0.1;
 
 

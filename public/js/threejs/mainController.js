@@ -194,7 +194,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         // const text = document.createElement('input');
         // text.type = 'text'
         const moonMassLabel = new THREE.CSS3DObject(button);
-        moonMassLabel.position.set(0, -90, -200);
+        moonMassLabel.position.set(0, 10, -200);
         moonMassLabel.rotation.x = Math.PI / 2;
         moonMassLabel.rotation.y = Math.PI;
         moonMassLabel.scale.set(2, 2, 2)

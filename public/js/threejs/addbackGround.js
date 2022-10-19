@@ -2,7 +2,7 @@ export function initBackgroud (scene) {
 
     // 床を追加
     new THREE.TextureLoader().load(
-        "./../../assets/env/background.png",
+        "./assets/env/background.png",
         texture => {
             texture.wrapS = THREE.RepeatWrapping;
             texture.wrapT = THREE.RepeatWrapping;
@@ -28,7 +28,7 @@ export function initBackgroud (scene) {
 
     // 中央のロビーを追加
     new THREE.TextureLoader().load(
-        "./../../assets/env/decoration/lobby.png",
+        "./assets/env/decoration/lobby.png",
         texture => {
             texture.wrapS = THREE.RepeatWrapping;
             texture.wrapT = THREE.RepeatWrapping;

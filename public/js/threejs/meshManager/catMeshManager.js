@@ -141,7 +141,7 @@ export function catAction(obj, actionNum) {
 }
 
 export function setCatMaterial(obj, kittenKind) {
-    let texture = new THREE.TextureLoader().load(`./../../../assets/env/cats/${kittenKind}.png`)
+    let texture = new THREE.TextureLoader().load(`./assets/env/cats/${kittenKind}.png`)
     texture.flipY = false;
 
     obj.mesh.traverse((object) => { //モデルの構成要素をforEach的に走査

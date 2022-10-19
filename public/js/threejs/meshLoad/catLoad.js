@@ -7,12 +7,12 @@ const kittenKinds = ["buchi", "gray", "hokke", "kutsushita", "mike", "white"]
 const kittenIconKinds = ["angry", "disgusted", "fearful", "happy", "neutral", "sad", "surprised", "ng"]
 
 // ネコのモデルが置かれている位置のパス
-const url = './../../../assets/env/cats/cat.glb';
+const url = './assets/env/cats/cat.glb';
 
 // ネコのメッシュとアニメーション読み込み
 export function loadCatModel(position, kittenKind, scale) {
     return new Promise((resolve) => {
-        let texture = new THREE.TextureLoader().load(`./../../../assets/env/cats/${kittenKind}.png`)
+        let texture = new THREE.TextureLoader().load(`./assets/env/cats/${kittenKind}.png`)
         texture.flipY = false;
 
 
@@ -101,7 +101,7 @@ export async function loadKittenMaterial() {
             kittenIconMaterial[kittenKind] = {}
             promiseArray.push(new Promise((resolve) => {
                 new THREE.TextureLoader().load(
-                    `./../../../assets/env/kitten/${kittenKind}/${kittenIconKind}.png`,
+                    `./assets/env/kitten/${kittenKind}/${kittenIconKind}.png`,
                     texture => {
                         texture.wrapS = THREE.RepeatWrapping;
                         texture.wrapT = THREE.RepeatWrapping;
