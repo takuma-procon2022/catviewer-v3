@@ -16,19 +16,19 @@ export async function addGroup(groupId, position, kanbanText) {
     }
 
     // グループ中心にこたつ配置
-    let kotatsu = await addKotatsu(position);
+    // let kotatsu = await addKotatsu(position);
 
     // 少しずれた位置に親ネコ追加
     let cat1 = await addCat("walk", {
         x: position.x - 150,
         y: getRandomInt(position.y - 50, position.y + 50),
-    }, catKinds[getRandomInt(0, catKinds.length)], catScale);
+    }, catKinds[getRandomInt(0, catKinds.length)], getRandomInt(40, 70));
 
     // 少しずれた位置に親ネコ追加
     let cat2 = await addCat("walk", {
         x: position.x + 150,
         y: getRandomInt(position.y - 50, position.y + 50),
-    }, catKinds[getRandomInt(0, catKinds.length)], catScale);
+    }, catKinds[getRandomInt(0, catKinds.length)], getRandomInt(40, 70));
 
     // let [kanbanImgMesh, kanbanLabel] = await addKanban(groupId, {
     //     x: position.x - 200,
@@ -38,7 +38,7 @@ export async function addGroup(groupId, position, kanbanText) {
 
     // グループリストにメッシュを格納
     groupList.set(groupId, {
-        kotatsu: kotatsu,
+        kotatsu: null,
         cat: [cat1, cat2],
         kanban: {
             imgMesh: null,
@@ -62,9 +62,9 @@ export function delGroup(groupId) {
     let group = groupList.get(groupId);
 
     // こたつをシーンから削除
-    scene.remove(group.kotatsu);
-    group.kotatsu.material.dispose();
-    group.kotatsu.geometry.dispose();
+    // scene.remove(group.kotatsu);
+    // group.kotatsu.material.dispose();
+    // group.kotatsu.geometry.dispose();
 
     // 親ネコをシーンから削除
     group.cat.forEach(cat => {

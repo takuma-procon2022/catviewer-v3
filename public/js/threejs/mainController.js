@@ -10,6 +10,8 @@ import { kittenFukidashiUpdate } from "./kittenShuffle.js";
 
 
 import { startUpdateGroup } from "./../server/managerUpdate.js";
+import { clickAddCat } from "./../server/serverControler.js"
+
 // import { groupList } from "../server/groupManager.js";
 
 //========================[Three.js描画用変数]========================
@@ -182,19 +184,20 @@ window.addEventListener('DOMContentLoaded', async () => {
         // moonMassDiv.textContent = 'こんにちは';
         // moonMassDiv.style.marginTop = '-1em';
         const button = document.createElement('button');
-        button.innerText = "Hello"
+        button.innerText = "ネコの追加"
         // button.setAttribute('onpointerdown', 'console.log(1)');
         button.addEventListener("pointerdown", () => {
             console.log("hello");
+            clickAddCat()
             // alert('Hello');
         })
         // const text = document.createElement('input');
         // text.type = 'text'
         const moonMassLabel = new THREE.CSS3DObject(button);
-        moonMassLabel.position.set(100, 50, 100);
+        moonMassLabel.position.set(0, -90, -200);
         moonMassLabel.rotation.x = Math.PI / 2;
         moonMassLabel.rotation.y = Math.PI;
-        moonMassLabel.scale.set(10, 10, 10)
+        moonMassLabel.scale.set(2, 2, 2)
         scene.add(moonMassLabel);
         setControll();
 

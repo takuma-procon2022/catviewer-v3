@@ -105,11 +105,11 @@ export function catUpdate(obj, delta) {
                 catAction(obj, 5);
                 obj.state.name = "walk";
                 obj.state.toposition = {
-                    x: getRandomInt(obj.groupData.position.x - 1300, obj.groupData.position.x + 1300),
-                    y: getRandomInt(obj.groupData.position.y - 1300, obj.groupData.position.y + 1300),
+                    x: getRandomInt(-2000, 2000),
+                    y: getRandomInt(-1300, 1300),
                 }
                 obj.state.iscomplete = false;
-            }, getRandomInt(7 * 1000, 20 * 1000))
+            }, getRandomInt(12 * 1000, 25 * 1000))
         }
 
     }
