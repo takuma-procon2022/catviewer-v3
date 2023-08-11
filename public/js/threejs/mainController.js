@@ -9,6 +9,9 @@ import { userUpdate } from "./meshManager/userMeshManager.js";
 import { kittenFukidashiUpdate } from "./kittenShuffle.js";
 
 
+import { VRButton } from "./lib/VRButton.js";
+
+
 import { startUpdateGroup } from "./../server/managerUpdate.js";
 import { clickAddCat } from "./../server/serverControler.js"
 
@@ -35,13 +38,13 @@ export let ownUserId = null;       // 自分のユーザーID保存
 //グループ、親ネコ系
 export let groupList = new Map;    // グループIDと生成したメッシュを対応させたMap
 export const catKinds = ["buchi", "gray", "hokke", "kutsushita", "mike", "white"] // ネコの種類
-export const catScale = 60;        // 親ネコの大きさ
+export const catScale = 0.005;        // 親ネコの大きさ
 export let fukidashiList = new Map()
 
 //子ネコ系
 export let kittenList = new Map;   // 子ネコが応対するユーザーのユーザーIDと生成したメッシュを対応させたMap
 export let kittenIconMaterial = {} // 子ネコのマテリアル読み込み
-export const kittenScale = 30;     // 子ネコの大きさ
+export const kittenScale = 0.001;     // 子ネコの大きさ
 export let kittenFukidashiList = new Map()
 //====================================================================
 
@@ -134,14 +137,16 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         // シーンを作成
         scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xBEDECB); // 背景色
+        // scene.background = new THREE.Color(0xBEDECB); // 背景色
 
         // ウィンドウサイズ設定
         let width = document.getElementById('main_canvas').getBoundingClientRect().width;
         let height = document.getElementById('main_canvas').getBoundingClientRect().height;
 
         // カメラを作成
-        camera = new THREE.OrthographicCamera(width / - 2, width / 2, height / 2, height / - 2, 1, 4000);
+        // camera = new THREE.OrthographicCamera(width / - 2, width / 2, height / 2, height / - 2, 1, 4000);
+        
+        camera = new THREE.PerspectiveCamera(45, width / height, 0.5, 2000);
         camera.position.set(0, 800, 0); //初期カメラ位置設定
 
         resize(); // 描画サイズ調整
@@ -156,7 +161,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 
 
-        initBackgroud(scene); //床と装飾の読み込み
+        // initBackgroud(scene); //床と装飾の読み込み
         await loadKittenMaterial(); //子ネコ用マテリアル事前読み込み
 
 
@@ -201,7 +206,19 @@ window.addEventListener('DOMContentLoaded', async () => {
         scene.add(moonMassLabel);
         setControll();
 
-        tick(); // 毎フレーム更新開始
+        // tick(); // 毎フレーム更新開始
+
+
+        initwebxr();
+    }
+
+    function initwebxr() {
+        renderer.xr.enabled = true;
+        renderer.setAnimationLoop(tick);
+
+        document.body.appendChild(VRButton.createButton(renderer));
+        // var polyfill = new WebXRPolyfill();
+
     }
 
 
@@ -256,14 +273,14 @@ window.addEventListener('DOMContentLoaded', async () => {
         startUpdateGroup()
 
         // [デバッグ]パフォーマンス表示
-        document.getElementById('info').innerHTML = JSON.stringify(renderer.info.render, '', '    ');
-        stats.update(); // フレームレート情報更新
+        // document.getElementById('info').innerHTML = JSON.stringify(renderer.info.render, '', '    ');
+        // stats.update(); // フレームレート情報更新
 
         controls.update();
         effect.render(scene, camera); // フレームをレンダリング
         labelRenderer.render(scene, camera);
 
-        requestAnimationFrame(tick); // ループ
+        // requestAnimationFrame(tick); // ループ
     }
 
 

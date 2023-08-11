@@ -5,12 +5,13 @@ export function addCat(state_name, position, kittenKind, scale) {
     let catMesh = {
         mesh: {
             position: {
-                x: getRandomInt(position.x - 300, position.x + 300),
-                y: -50,
-                z: getRandomInt(position.y + 100, position.y + 300),
+                x: getRandomInt(position.x - 1, position.x + 1),
+                y: 0,
+                // y: -50,
+                z: getRandomInt(position.y + 1, position.y + 1),
             },
             rotation: {
-                x: 60 * Math.PI / 180,
+                x: 0 * Math.PI / 180,
                 y: 0,
                 z: 0,
             }
@@ -38,7 +39,7 @@ export function addCat(state_name, position, kittenKind, scale) {
 
 function catWalk(obj, delta) {
     // const speed = 70;
-    const speed = 30;
+    const speed = 2;
     // const speed = 20;
 
     let torotation = 0;
@@ -105,8 +106,8 @@ export function catUpdate(obj, delta) {
                 catAction(obj, 5);
                 obj.state.name = "walk";
                 obj.state.toposition = {
-                    x: getRandomInt(-2000, 2000),
-                    y: getRandomInt(-1300, 1300),
+                    x: getRandomInt(-20, 20),
+                    y: getRandomInt(-20, 20),
                 }
                 obj.state.iscomplete = false;
             }, getRandomInt(12 * 1000, 25 * 1000))

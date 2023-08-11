@@ -4,7 +4,7 @@ export let groupList = new Map();
 import { getRandomInt, lerp } from "./useful.js"
 import { addCat } from "./catManager.js"
 
-const catScale = 60;
+const catScale = 0.01;
 const catKinds = ["buchi", "gray", "hokke", "kutsushita", "mike", "white"] // ネコの種類
 
 export function addGroup(groupId, position) {
@@ -15,14 +15,14 @@ export function addGroup(groupId, position) {
 
     // 少しずれた位置に親ネコ追加
     let cat1 = addCat("walk", {
-        x: position.x - 150,
-        y: getRandomInt(position.y - 50, position.y + 50),
+        x: position.x - 1,
+        y: getRandomInt(position.y - 1, position.y + 1),
     }, catKinds[getRandomInt(0, catKinds.length)], catScale);
 
     // 少しずれた位置に親ネコ追加
     let cat2 = addCat("walk", {
-        x: position.x + 150,
-        y: getRandomInt(position.y - 50, position.y + 50),
+        x: position.x + 1,
+        y: getRandomInt(position.y - 1, position.y + 1),
     }, catKinds[getRandomInt(0, catKinds.length)], catScale);
 
     // グループリストにメッシュを格納

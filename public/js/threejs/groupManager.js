@@ -20,15 +20,15 @@ export async function addGroup(groupId, position, kanbanText) {
 
     // 少しずれた位置に親ネコ追加
     let cat1 = await addCat("walk", {
-        x: position.x - 150,
-        y: getRandomInt(position.y - 50, position.y + 50),
-    }, catKinds[getRandomInt(0, catKinds.length)], getRandomInt(40, 70));
+        x: position.x - 1,
+        y: getRandomInt(position.y - 1, position.y + 1),
+    }, catKinds[getRandomInt(0, catKinds.length)], 0.3);
 
     // 少しずれた位置に親ネコ追加
     let cat2 = await addCat("walk", {
-        x: position.x + 150,
-        y: getRandomInt(position.y - 50, position.y + 50),
-    }, catKinds[getRandomInt(0, catKinds.length)], getRandomInt(40, 70));
+        x: position.x + 1,
+        y: getRandomInt(position.y - 1, position.y + 1),
+    }, catKinds[getRandomInt(0, catKinds.length)], 0.1);
 
     // let [kanbanImgMesh, kanbanLabel] = await addKanban(groupId, {
     //     x: position.x - 200,

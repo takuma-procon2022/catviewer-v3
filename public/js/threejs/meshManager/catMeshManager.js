@@ -33,9 +33,10 @@ export async function addCat(state_name, position, kittenKind, scale) {
                 y: position.y,
             },
             fromRotate: {
-                x: 60 * Math.PI / 180,
+                x: 0,
+                // x: 60 * Math.PI / 180,
                 y: 0,
-                z: 0,
+                z: 90 * Math.PI / 180,
             },
             to: {
                 x: position.x,
@@ -43,8 +44,9 @@ export async function addCat(state_name, position, kittenKind, scale) {
             },
             toRotate: {
                 x: 60 * Math.PI / 180,
+                // x: 60 * Math.PI / 180,
                 y: 0,
-                z: 0,
+                z: 90 * Math.PI / 180,
             },
         },
         serverSyncData: {
@@ -73,7 +75,8 @@ export function addCatWalkState(obj, toposition) {
 
 // ネコ歩く
 export function catWalk(obj, delta) {
-    const speed = 70;
+    const speed = 2;
+    // const speed = 70;
     
     let torotation = 0;
 

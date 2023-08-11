@@ -21,10 +21,11 @@ export function loadCatModel(position, kittenKind, scale) {
             let animations = gltf.animations;
             // model.name = "model_with_cloth";
             model.scale.set(scale, scale, scale);//モデルの大きさ
-            model.position.set(getRandomInt(position.x - 300, position.x + 300), 300, getRandomInt(position.y + 100, position.y + 300));
+            model.position.set(getRandomInt(position.x - 1, position.x + 1), 0, getRandomInt(position.y + 1, position.y + 1));
             //モデルの回転
             // model.rotation.y = 600;
-            model.rotation.x = 60 * Math.PI / 180 ;
+            // model.rotation.x = 270 * Math.PI / 180 ;
+            // model.rotation.z = 270 * Math.PI / 180 ;
 
             model.traverse((object) => { //モデルの構成要素をforEach的に走査
                 if (object.isMesh) { //その構成要素がメッシュだったら
